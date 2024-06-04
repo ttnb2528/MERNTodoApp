@@ -46,7 +46,7 @@ const Home = () => {
       <ToastContainer />
 
       <div className="container">
-        <div className="row justify-content-md-center mt-4">
+        <div className="row justify-content-md-center mt-4 gap-4">
           {filteredList.map((todo) => {
             return (
               <Todo
@@ -59,7 +59,9 @@ const Home = () => {
           })}
 
           {filteredList.length === 0 && (
-            <div className="alert alert-warning">No Todos Found</div>
+            <h4 className="text-center col-sm-2 alert alert-warning">
+              No Todos Found
+            </h4>
           )}
         </div>
       </div>

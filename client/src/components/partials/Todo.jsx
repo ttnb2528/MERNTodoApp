@@ -43,7 +43,7 @@ function Todo({ todo, setRefresh, setEditTodo }) {
   // };
 
   return (
-    <div className="col-sm-2 mx-3 my-2 alert bg-light ">
+    <div className="col-lg-5 col-md-4 alert bg-light d-flex justify-content-between">
       {/* <div className="card-header p-2">
         {todo.isCompleted ? "Completed" : "Not Completed"}
       </div> */}
@@ -66,39 +66,23 @@ function Todo({ todo, setRefresh, setEditTodo }) {
         >
           {todo.desc}
         </a>
-        <p className="card-text mt-2" style={{ fontSize: "14px" }}>
+        {/* <p className="card-text mt-2" style={{ fontSize: "14px" }}>
           {moment(todo.date).fromNow()}
-        </p>
+        </p> */}
       </div>
 
-      <div
-        className="actionButtons"
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          gap: "10px",
-        }}
-      >
-        <div
-          className="mt-3"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-          }}
-        >
-          <div className="deleteButton" onClick={handleDelete}>
-            <FaTrash />
-          </div>
-
-          <span
+      <div className="actionButtons float-end">
+        <div className="d-flex align-items-center gap-2">
+          <div
             data-bs-toggle="modal"
             data-bs-target="#exampleModal1"
             onClick={() => handleEditTodo(todo)}
           >
             <FaEdit />
-          </span>
+          </div>
+          <div className="deleteButton" onClick={handleDelete}>
+            <FaTrash />
+          </div>
         </div>
 
         {/* <div className="markTodo" onClick={handleMarkTodo}>
